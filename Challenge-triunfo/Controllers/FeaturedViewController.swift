@@ -13,7 +13,6 @@ class FeaturedViewController: UIViewController {
     let nowPlayingMovies = Movie.nowPlayingMovies()
     //let upcomingMovies = Movie.upcomingMovies()
     
-    
     @IBOutlet var popularCollectionView: UICollectionView!
     @IBOutlet var nowPlayingCollectionView: UICollectionView!
     
