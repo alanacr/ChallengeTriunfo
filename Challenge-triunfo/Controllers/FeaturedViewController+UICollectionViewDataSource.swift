@@ -14,7 +14,7 @@ extension FeaturedViewController: UICollectionViewDataSource {
         } else if collectionView == nowPlayingCollectionView {
             return nowPlayingMovies.count
         } else {
-            return 0
+            return upcomingMovies.count
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -24,9 +24,10 @@ extension FeaturedViewController: UICollectionViewDataSource {
             
         } else if collectionView == nowPlayingCollectionView {
             return makeNowPlayingCell(indexPath)
+        } else {
+            return makeUpcomingCell(indexPath: indexPath)
+            
         }
-        
-        return UICollectionViewCell ()
     }
     
     fileprivate func makePopularCell(_ indexPath: IndexPath) -> PopularCollectionViewCell {
@@ -50,12 +51,27 @@ extension FeaturedViewController: UICollectionViewDataSource {
         if let cell = nowPlayingCollectionView.dequeueReusableCell(withReuseIdentifier: NowPlayingCollectionViewCell.cellIndentifier, for: indexPath) as? NowPlayingCollectionViewCell {
             let titulo: String = nowPlayingMovies[indexPath.item].title
             
-            cell.setup2(title: titulo,
+            cell.setup(title: titulo,
                         year: "\(nowPlayingMovies[indexPath.item].releaseDate.prefix(4))",
                         image: UIImage(named: nowPlayingMovies[indexPath.item].posterPath) ?? UIImage())
             return cell
         }
         return NowPlayingCollectionViewCell ()
+    }
+    
+    fileprivate func makeUpcomingCell(indexPath: IndexPath) -> UpcomingCollectionViewCell {
+        if let cell = upcomingCollectionView.dequeueReusableCell(withReuseIdentifier: UpcomingCollectionViewCell.cellIdentifier, for: indexPath) as? UpcomingCollectionViewCell {
+            
+            let tituloUpcoming: String = upcomingMovies[indexPath.item].title
+            let dateUpcoming = upcomingMovies[indexPath.item].releaseDate
+            let date = DateHandler.shared.getMonth(of: dateUpcoming)
+            
+            cell.setup(title: tituloUpcoming,
+                       image: UIImage(named: upcomingMovies[indexPath.item].posterPath) ?? UIImage(),
+                       year: "\(date) \(upcomingMovies[indexPath.item].releaseDate.suffix(2))")
+            return cell
+        }
+        return UpcomingCollectionViewCell()
     }
     
 }

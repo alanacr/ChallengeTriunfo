@@ -22,9 +22,11 @@ class FeaturedViewController: UIViewController {
         
         popularCollectionView.dataSource = self
         nowPlayingCollectionView.dataSource = self
+        upcomingCollectionView.dataSource = self
         
         popularCollectionView.delegate = self
         nowPlayingCollectionView.delegate = self
+        upcomingCollectionView.delegate = self
         
         Task {
             self.popularMovies = await Movie.popularMoviesAPI()
