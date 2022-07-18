@@ -12,7 +12,7 @@ extension FeaturedViewController: UICollectionViewDataSource {
         if collectionView == popularCollectionView {
             return popularMovies.count
         } else if collectionView == nowPlayingCollectionView {
-            return popularMovies.count
+            return nowPlayingMovies.count
         } else {
             return 0
         }
@@ -33,7 +33,14 @@ extension FeaturedViewController: UICollectionViewDataSource {
         if let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: PopularCollectionViewCell.cellIndentifier, for: indexPath) as? PopularCollectionViewCell {
             
             cell.setup(title: popularMovies [indexPath.item].title,
-                       image: UIImage(named: popularMovies[indexPath.item].backdrop) ?? UIImage())
+                       image: UIImage())
+            let movie = popularMovies[indexPath.item]
+            Task{
+                let imageData = await Movie.downloadImageData(withPath: movie.backdropPath)
+                let image = UIImage(data: imageData) ?? UIImage()
+                cell.setup(title: movie.title, image: image)
+            }
+                           
             return cell
         }
         return PopularCollectionViewCell ()
@@ -45,7 +52,7 @@ extension FeaturedViewController: UICollectionViewDataSource {
             
             cell.setup2(title: titulo,
                         year: "\(nowPlayingMovies[indexPath.item].releaseDate.prefix(4))",
-                        image: UIImage(named: nowPlayingMovies[indexPath.item].poster) ?? UIImage())
+                        image: UIImage(named: nowPlayingMovies[indexPath.item].posterPath) ?? UIImage())
             return cell
         }
         return NowPlayingCollectionViewCell ()
