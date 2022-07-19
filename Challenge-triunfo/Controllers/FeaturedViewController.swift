@@ -10,8 +10,8 @@ import UIKit
 class FeaturedViewController: UIViewController {
     
     var popularMovies: [Movie] = []// = Movie.popularMovies()
-    let nowPlayingMovies = Movie.nowPlayingMovies()
-    let upcomingMovies = Movie.upcomingMovies()
+    var nowPlayingMovies: [Movie] = []
+    var upcomingMovies: [Movie] = []
     
     @IBOutlet var popularCollectionView: UICollectionView!
     @IBOutlet var nowPlayingCollectionView: UICollectionView!
@@ -31,6 +31,13 @@ class FeaturedViewController: UIViewController {
         Task {
             self.popularMovies = await Movie.popularMoviesAPI()
             self.popularCollectionView.reloadData()
+        
+            
+            self.nowPlayingMovies = await Movie.nowPlayingAPI()
+            self.nowPlayingCollectionView.reloadData()
+            
+            self.upcomingMovies = await Movie.upcomingAPI()
+            self.upcomingCollectionView.reloadData()
             
         }
         

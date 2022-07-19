@@ -8,7 +8,7 @@
 import Foundation
 
 extension Movie {
-
+    
     static let urlComponents = URLComponents (string: "https://api.themoviedb.org/")!
     
     static func popularMoviesAPI() async -> [Movie] {
@@ -36,6 +36,59 @@ extension Movie {
         return []
     }
     
+    // MARK: - now playing
+    
+    static func nowPlayingAPI() async -> [Movie] {
+        
+        var components = Movie.urlComponents
+        components.path = "/3/movie/now_playing"
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: Movie.apiKey)
+        ]
+        
+        let sessions = URLSession.shared
+        
+        do {
+            let (data, response) = try await sessions.data(from: components.url!)
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let movieResult = try decoder.decode(MoviesResponse.self, from: data)
+            return movieResult.results
+            
+        } catch {
+            print (error)
+        }
+        
+        return []
+    }
+    
+    // MARK: - upcoming
+    
+    static func upcomingAPI() async -> [Movie] {
+        
+        var components = Movie.urlComponents
+        components.path = "/3/movie/upcoming"
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: Movie.apiKey)
+        ]
+        
+        let sessions = URLSession.shared
+        
+        do {
+            let (data, response) = try await sessions.data(from: components.url!)
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let movieResult = try decoder.decode(MoviesResponse.self, from: data)
+            return movieResult.results
+            
+        } catch {
+            print (error)
+        }
+        
+        return []
+    }
     // MARK: - Download das imagens
     
     static func downloadImageData(withPath: String) async -> Data {
@@ -69,5 +122,9 @@ extension Movie {
         }
         return key
     }
+    
+    
+    
+    
 }
 
