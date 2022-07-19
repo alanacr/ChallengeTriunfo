@@ -506,6 +506,7 @@
                         <outlet property="posterImage" destination="P8i-dQ-jDx" id="4lE-wt-JcS"/>
                         <outlet property="ratingLabel" destination="SIC-LW-BAw" id="vKc-RH-8Nb"/>
                         <outlet property="titleLabel" destination="Ubx-hD-lS3" id="cFq-ge-2Jd"/>
+                        <segue destination="F9j-Ix-UoR" kind="show" identifier="posterSegue" id="cwX-xn-dT8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUd-Wy-jgM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -525,11 +526,58 @@
                     </tabBar>
                     <connections>
                         <segue destination="Ve1-P2-Wjm" kind="relationship" relationship="viewControllers" id="B4y-bm-RLe"/>
+                        <segue destination="6GI-ZZ-6VY" kind="relationship" relationship="viewControllers" id="LzN-pq-Yed"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwm-2U-2hJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-634.39999999999998" y="195.6521739130435"/>
+        </scene>
+        <!--Poster View Controller-->
+        <scene sceneID="56C-Ro-gso">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="F9j-Ix-UoR" customClass="PosterViewController" customModule="Challenge_triunfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cA5-hU-jmz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HoP-j9-yRV">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uW1-YT-HKL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HoP-j9-yRV" firstAttribute="top" secondItem="uW1-YT-HKL" secondAttribute="top" id="8qY-YZ-avT"/>
+                            <constraint firstItem="HoP-j9-yRV" firstAttribute="bottom" secondItem="uW1-YT-HKL" secondAttribute="bottom" id="BBz-z9-DxC"/>
+                            <constraint firstItem="uW1-YT-HKL" firstAttribute="trailing" secondItem="HoP-j9-yRV" secondAttribute="trailing" id="i4E-JM-gxj"/>
+                            <constraint firstItem="HoP-j9-yRV" firstAttribute="leading" secondItem="uW1-YT-HKL" secondAttribute="leading" id="q29-mm-aBT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gIL-w2-mab"/>
+                    <connections>
+                        <outlet property="posterImage" destination="HoP-j9-yRV" id="SmR-EI-gDm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3H-HK-ytV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3055" y="196"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="24V-dp-EvD">
+            <objects>
+                <viewController id="6GI-ZZ-6VY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tZM-k6-jni">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zeF-4w-EaV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="OqY-tF-u2h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZG2-Fh-otC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-634" y="1209"/>
         </scene>
         <!--Featured-->
         <scene sceneID="vYc-LK-jpN">

@@ -19,6 +19,9 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(touchInImage))
+        posterImage.addGestureRecognizer(gesture)
+        posterImage.isUserInteractionEnabled = true
 
         // Do any additional setup after loading the view.
         
@@ -47,5 +50,17 @@ class DetailsViewController: UIViewController {
         overviewLabel.text = movie.overview
         
     }
-
+    
+    @objc func touchInImage() {
+        self.performSegue(withIdentifier: "posterSegue", sender: movie)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? PosterViewController {
+            let movie = sender as? Movie
+            destination.movie = movie
+        }
+    }
+        
 }
