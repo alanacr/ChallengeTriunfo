@@ -72,7 +72,7 @@ extension FeaturedViewController: UICollectionViewDataSource {
             let movie = upcomingMovies[indexPath.item]
             let dateUpcoming = upcomingMovies[indexPath.item].releaseDate
             let date = DateHandler.shared.getMonth(of: dateUpcoming)
- 
+            
             cell.setup(title: movie.title,
                        image: UIImage(named: upcomingMovies[indexPath.item].posterPath) ?? UIImage(),
                        year: "\(date) \(upcomingMovies[indexPath.item].releaseDate.suffix(2))")
@@ -82,7 +82,7 @@ extension FeaturedViewController: UICollectionViewDataSource {
                 cell.setup(title: movie.title,
                            image: image,
                            year: "\(date) \(upcomingMovies[indexPath.item].releaseDate.suffix(2))")
-
+                
             }
             return cell
         }

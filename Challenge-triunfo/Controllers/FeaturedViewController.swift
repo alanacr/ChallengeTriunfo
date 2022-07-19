@@ -31,7 +31,6 @@ class FeaturedViewController: UIViewController {
         Task {
             self.popularMovies = await Movie.popularMoviesAPI()
             self.popularCollectionView.reloadData()
-        
             
             self.nowPlayingMovies = await Movie.nowPlayingAPI()
             self.nowPlayingCollectionView.reloadData()
@@ -44,9 +43,25 @@ class FeaturedViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? DetailsViewController {
-            let movie = sender as? Movie
-            destination.movie = movie
+        if segue.identifier == "detailsSegue"{
+            if let destination = segue.destination as? DetailsViewController {
+                let movie = sender as? Movie
+                destination.movie = movie
+            }
+        } else if segue.identifier == "popularButton" {
+            if let destination = segue.destination as? SeeAllViewController {
+                destination.movie = popularMovies
+            }
+
+        } else if segue.identifier == "nowPlayingButton" {
+            if let destination = segue.destination as? SeeAllViewController {
+                destination.movie = nowPlayingMovies
+            }
+        } else if segue.identifier == "nowPlayingButton" {
+            if let destination = segue.destination as? SeeAllViewController {
+                destination.movie = upcomingMovies
+                
+            }
         }
     }
 }

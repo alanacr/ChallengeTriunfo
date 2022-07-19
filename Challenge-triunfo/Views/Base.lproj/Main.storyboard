@@ -42,6 +42,11 @@
                                                                         <rect key="frame" x="286" y="0.0" width="67" height="50"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="See all"/>
+                                                                        <connections>
+                                                                            <segue destination="t8H-Of-s2o" kind="popoverPresentation" identifier="popularButton" popoverAnchorView="Lz7-ra-ApH" id="G1C-hz-eDg">
+                                                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                                            </segue>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -122,6 +127,11 @@
                                                                         <rect key="frame" x="286" y="0.0" width="67" height="50"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="See all"/>
+                                                                        <connections>
+                                                                            <segue destination="t8H-Of-s2o" kind="popoverPresentation" identifier="nowPlayingButton" popoverAnchorView="xGT-ea-m1X" id="fCw-fF-Db0">
+                                                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                                            </segue>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -222,6 +232,11 @@
                                                                         <rect key="frame" x="286" y="0.0" width="67" height="50"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" title="See all"/>
+                                                                        <connections>
+                                                                            <segue destination="t8H-Of-s2o" kind="popoverPresentation" identifier="upcomingButton" popoverAnchorView="GnL-5l-Nhg" id="dE4-74-uqQ">
+                                                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                                            </segue>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -329,11 +344,96 @@
                         <outlet property="popularCollectionView" destination="hGx-A9-p5A" id="JEe-vS-5sO"/>
                         <outlet property="upcomingCollectionView" destination="DfA-qB-M6r" id="fBU-PF-9v0"/>
                         <segue destination="KPv-Ud-nSb" kind="show" identifier="detailsSegue" id="e26-nb-6aO"/>
+                        <segue destination="t8H-Of-s2o" kind="show" identifier="detailsSegue" id="Vfk-UI-bDj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1239" y="196"/>
+        </scene>
+        <!--See All View Controller-->
+        <scene sceneID="tA1-Km-Tie">
+            <objects>
+                <viewController id="t8H-Of-s2o" customClass="SeeAllViewController" customModule="Challenge_triunfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hlO-XK-bEN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0t9-8z-91D">
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="seeAllCell" rowHeight="136" id="RTz-Fe-Lcx" customClass="SeeAllTableViewCell" customModule="Challenge_triunfo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="375" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RTz-Fe-Lcx" id="WJ8-YA-XUP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="ePT-Id-d5x">
+                                                    <rect key="frame" x="177" y="23" width="166" height="114"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="jHt-er-rb7">
+                                                            <rect key="frame" x="3" y="0.0" width="185" height="43"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="&lt;titleLabel&gt;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzF-bI-Ggy">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="185" height="20.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="185" id="orb-fZ-MDZ"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;dateLabel&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-DI-SJH">
+                                                                    <rect key="frame" x="0.0" y="22.5" width="96" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3DH-PN-Moh">
+                                                    <rect key="frame" x="16" y="12" width="145" height="112"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="145" id="Paj-Zz-GeN"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3DH-PN-Moh" firstAttribute="top" secondItem="WJ8-YA-XUP" secondAttribute="top" constant="12" id="CPD-0o-VO1"/>
+                                                <constraint firstItem="3DH-PN-Moh" firstAttribute="leading" secondItem="WJ8-YA-XUP" secondAttribute="leading" constant="16" id="GXW-rs-wum"/>
+                                                <constraint firstItem="ePT-Id-d5x" firstAttribute="leading" secondItem="3DH-PN-Moh" secondAttribute="trailing" constant="16" id="JSg-v8-cqv"/>
+                                                <constraint firstItem="ePT-Id-d5x" firstAttribute="bottom" secondItem="WJ8-YA-XUP" secondAttribute="bottomMargin" constant="12" id="NIs-zb-cfa"/>
+                                                <constraint firstAttribute="bottom" secondItem="3DH-PN-Moh" secondAttribute="bottom" constant="12" id="OkC-nZ-Kma"/>
+                                                <constraint firstItem="ePT-Id-d5x" firstAttribute="top" secondItem="WJ8-YA-XUP" secondAttribute="topMargin" constant="12" id="XAi-R7-r57"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ePT-Id-d5x" secondAttribute="trailing" constant="16" id="vcO-HE-T8z"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="Cxf-DI-SJH" id="AtR-nZ-q5h"/>
+                                            <outlet property="posterImage" destination="3DH-PN-Moh" id="MXu-bQ-uPd"/>
+                                            <outlet property="titleLabel" destination="uzF-bI-Ggy" id="u76-5c-h9H"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wbt-ns-soV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="plY-xL-cBY"/>
+                    <connections>
+                        <outlet property="tableViewSeeAll" destination="0t9-8z-91D" id="3ss-DB-ON5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sXS-hz-8IE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237.5999999999999" y="1317.3913043478262"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="hS5-Ic-ktw">
@@ -526,7 +626,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="Ve1-P2-Wjm" kind="relationship" relationship="viewControllers" id="B4y-bm-RLe"/>
-                        <segue destination="6GI-ZZ-6VY" kind="relationship" relationship="viewControllers" id="LzN-pq-Yed"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwm-2U-2hJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -563,22 +662,6 @@
             </objects>
             <point key="canvasLocation" x="3055" y="196"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="24V-dp-EvD">
-            <objects>
-                <viewController id="6GI-ZZ-6VY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tZM-k6-jni">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="zeF-4w-EaV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="OqY-tF-u2h"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZG2-Fh-otC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-634" y="1209"/>
-        </scene>
         <!--Featured-->
         <scene sceneID="vYc-LK-jpN">
             <objects>
@@ -599,6 +682,9 @@
             <point key="canvasLocation" x="335.19999999999999" y="195.6521739130435"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="G1C-hz-eDg"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="film.fill" catalog="system" width="128" height="93"/>

@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+    
     var movie: Movie? 
     
     @IBOutlet var backdropImage: UIImageView!
@@ -22,13 +22,13 @@ class DetailsViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(touchInImage))
         posterImage.addGestureRecognizer(gesture)
         posterImage.isUserInteractionEnabled = true
-
+        
         // Do any additional setup after loading the view.
         
         guard let movie = movie else {
             return
         }
-
+        
         self.title = movie.title
         
         Task{
@@ -62,5 +62,5 @@ class DetailsViewController: UIViewController {
             destination.movie = movie
         }
     }
-        
+    
 }
