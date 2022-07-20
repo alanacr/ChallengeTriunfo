@@ -176,9 +176,32 @@ extension Movie {
         }
         return key
     }
-    
-    
-    
-    
+    // MARK: SEARCH
+    static func searchMovieAPI(title: String) async -> [Movie] {
+        
+        var components = Movie.urlComponents
+        components.path = "/3/search/movie"
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: Movie.apiKey),
+            URLQueryItem(name: "query", value: title)
+        ]
+        
+        let sessions = URLSession.shared
+        
+        do {
+            let (data, response) = try await sessions.data(from: components.url!)
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let movieResult = try decoder.decode(MoviesResponse.self, from: data)
+            return movieResult.results
+            
+        } catch {
+            print (error)
+        }
+        
+        return []
+    }
 }
+
 

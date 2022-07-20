@@ -29,14 +29,14 @@ extension TrendingViewController: UICollectionViewDataSource {
             let movie = todayMovies[indexPath.item]
             
             cell.setup(title: movie.title,
-                       date: "\(movie.releaseDate.prefix(4))",
+                       date: "\(movie.releaseDate?.prefix(4))",
                        image: UIImage())
             
             Task {
-                let imageData = await Movie.downloadImageData(withPath: movie.posterPath)
+                let imageData = await Movie.downloadImageData(withPath: movie.posterPath ?? "")
                 let image = UIImage(data: imageData) ?? UIImage()
                 cell.setup(title: movie.title,
-                           date: "\(todayMovies[indexPath.item].releaseDate.prefix(4))",
+                           date: "\(todayMovies[indexPath.item].releaseDate?.prefix(4))",
                            image: image)
             }
             
@@ -47,14 +47,14 @@ extension TrendingViewController: UICollectionViewDataSource {
         let movie = weekMovies[indexPath.item]
         
         cell.setup(title: movie.title,
-                   date: "\(movie.releaseDate.prefix(4))",
+                   date: "\(movie.releaseDate?.prefix(4))",
                    image: UIImage())
         
         Task {
-            let imageData = await Movie.downloadImageData(withPath: movie.posterPath)
+            let imageData = await Movie.downloadImageData(withPath: movie.posterPath ?? "")
             let image = UIImage(data: imageData) ?? UIImage()
             cell.setup(title: movie.title,
-                       date: "\(todayMovies[indexPath.item].releaseDate.prefix(4))",
+                       date: "\(todayMovies[indexPath.item].releaseDate?.prefix(4))",
                        image: image)
         }
         

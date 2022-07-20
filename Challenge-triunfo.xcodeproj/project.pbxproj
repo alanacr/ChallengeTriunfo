@@ -12,6 +12,9 @@
 		821F827C287F47E300B6B1E2 /* FeaturedViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F827B287F47E300B6B1E2 /* FeaturedViewController+UICollectionViewDelegate.swift */; };
 		823860DC2888239200A9B1DD /* TrendingViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823860DB2888239200A9B1DD /* TrendingViewController+UICollectionViewDataSource.swift */; };
 		823860DE288823CB00A9B1DD /* TrendingViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823860DD288823CB00A9B1DD /* TrendingViewController+UICollectionViewDelegate.swift */; };
+		823860E028884C9D00A9B1DD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823860DF28884C9D00A9B1DD /* SearchViewController.swift */; };
+		823860E22888510000A9B1DD /* SearchViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823860E12888510000A9B1DD /* SearchViewController+UITableViewDataSource.swift */; };
+		823860E4288852AE00A9B1DD /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823860E3288852AE00A9B1DD /* SearchTableViewCell.swift */; };
 		8261AB3C288743730081BF07 /* SeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261AB3B288743730081BF07 /* SeeAllViewController.swift */; };
 		8261AB3E288748D60081BF07 /* SeeAllViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261AB3D288748D60081BF07 /* SeeAllViewController+DataSource.swift */; };
 		8261AB40288748FA0081BF07 /* SeeAllViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8261AB3F288748FA0081BF07 /* SeeAllViewController+Delegate.swift */; };
@@ -46,6 +49,9 @@
 		821F827B287F47E300B6B1E2 /* FeaturedViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeaturedViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		823860DB2888239200A9B1DD /* TrendingViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrendingViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		823860DD288823CB00A9B1DD /* TrendingViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TrendingViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		823860DF28884C9D00A9B1DD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		823860E12888510000A9B1DD /* SearchViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		823860E3288852AE00A9B1DD /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8261AB3B288743730081BF07 /* SeeAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllViewController.swift; sourceTree = "<group>"; };
 		8261AB3D288748D60081BF07 /* SeeAllViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeeAllViewController+DataSource.swift"; sourceTree = "<group>"; };
 		8261AB3F288748FA0081BF07 /* SeeAllViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SeeAllViewController+Delegate.swift"; sourceTree = "<group>"; };
@@ -130,6 +136,8 @@
 				82AC45C72887C9300064B9D5 /* TrendingViewController.swift */,
 				823860DB2888239200A9B1DD /* TrendingViewController+UICollectionViewDataSource.swift */,
 				823860DD288823CB00A9B1DD /* TrendingViewController+UICollectionViewDelegate.swift */,
+				823860DF28884C9D00A9B1DD /* SearchViewController.swift */,
+				823860E12888510000A9B1DD /* SearchViewController+UITableViewDataSource.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 				82DB2D8D287C98A400A1D23E /* UpcomingCollectionViewCell.swift */,
 				8261AB41288749930081BF07 /* SeeAllTableViewCell.swift */,
 				82AC45C92887CAE50064B9D5 /* TrendingCollectionViewCell.swift */,
+				823860E3288852AE00A9B1DD /* SearchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,6 +264,7 @@
 				8267B18C28872D940055A4F7 /* PosterViewController.swift in Sources */,
 				8261AB42288749930081BF07 /* SeeAllTableViewCell.swift in Sources */,
 				82DB2D8E287C98A400A1D23E /* UpcomingCollectionViewCell.swift in Sources */,
+				823860E4288852AE00A9B1DD /* SearchTableViewCell.swift in Sources */,
 				823860DC2888239200A9B1DD /* TrendingViewController+UICollectionViewDataSource.swift in Sources */,
 				82DB2DA0287E145700A1D23E /* FeaturedViewController+UICollectionViewDataSource.swift in Sources */,
 				82DB2D8C287C985500A1D23E /* NowPlayingCollectionViewCell.swift in Sources */,
@@ -268,9 +278,11 @@
 				821F827C287F47E300B6B1E2 /* FeaturedViewController+UICollectionViewDelegate.swift in Sources */,
 				82AC45C82887C9300064B9D5 /* TrendingViewController.swift in Sources */,
 				821F827A287F3F0F00B6B1E2 /* DetailsViewController.swift in Sources */,
+				823860E028884C9D00A9B1DD /* SearchViewController.swift in Sources */,
 				82AFF25A2881F8CE0032C0B3 /* MovieResponse.swift in Sources */,
 				82DB2D9B287DF54B00A1D23E /* Movie+Upcoming.swift in Sources */,
 				82948BE12874AEE10098B4BA /* SceneDelegate.swift in Sources */,
+				823860E22888510000A9B1DD /* SearchViewController+UITableViewDataSource.swift in Sources */,
 				8261AB3C288743730081BF07 /* SeeAllViewController.swift in Sources */,
 				82AFF2582881EC3D0032C0B3 /* Movie+API.swift in Sources */,
 			);
