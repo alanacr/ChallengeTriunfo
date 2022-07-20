@@ -12,9 +12,10 @@ class SeeAllViewController: UIViewController {
 
     
     var movie : [Movie] = []
+    var seeAllTitle : String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = seeAllTitle
         tableViewSeeAll.dataSource = self
         tableViewSeeAll.delegate = self
         

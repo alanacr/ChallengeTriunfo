@@ -51,15 +51,20 @@ class FeaturedViewController: UIViewController {
         } else if segue.identifier == "popularButton" {
             if let destination = segue.destination as? SeeAllViewController {
                 destination.movie = popularMovies
+                destination.seeAllTitle = "Popular"
             }
 
         } else if segue.identifier == "nowPlayingButton" {
             if let destination = segue.destination as? SeeAllViewController {
                 destination.movie = nowPlayingMovies
+                destination.seeAllTitle = "Now Playing"
+
             }
         } else if segue.identifier == "upcomingButton" {
             if let destination = segue.destination as? SeeAllViewController {
                 destination.movie = upcomingMovies
+                destination.seeAllTitle = "Upcoming"
+
                 
             }
         }
