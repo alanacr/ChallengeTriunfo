@@ -36,7 +36,7 @@ extension Movie {
         return []
     }
     
-    // MARK: - now playing
+    // MARK: - now playing api
     
     static func nowPlayingAPI() async -> [Movie] {
         
